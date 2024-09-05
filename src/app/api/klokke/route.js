@@ -8,5 +8,7 @@ export async function GET() {
     time: time.toLocaleTimeString()
   };
   
-  return Response.json({ data });
+  return new Response(JSON.stringify({ data }), {
+    headers: { 'Content-Type': 'application/json' }
+  });
 }

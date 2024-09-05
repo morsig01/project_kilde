@@ -1,34 +1,32 @@
-"use client";
+'use client';
 
-import "./page.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-export default function Home() {
-    const [time, setTime] = useState('--:--:--');
+export default function ClockPage() {
+  const [timeData, setTimeData] = useState(null);
 
-    const fetchTime = () => {
-        const apiUrl = 'http://127.0.0.1:5000/api/clock';
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch('/api/klokke');
+        const result = await response.json();
+        setTimeData(result.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    }
 
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                setTime(data.time);
-            })
-            .catch(error => {
-                console.error('Error fetching time:', error);
-            });
-    };
+    fetchData();
+  }, []);
 
-    useEffect(() => {
-        
-        fetchTime();
-    }, []);
+  if (!timeData) return <p>Loading...</p>;
 
-    return (
-        <div className="clock-container">
-            <h1>Current Time</h1>
-            <div className="time" id="clock">{time}</div>  {/* Render the state variable */}
-            <button className="refresh-btn" onClick={fetchTime}>Refresh Time</button>
-        </div>
-    );
+  return (
+    <div>
+      <h1>Current Time Information</h1>
+      <p>Year: {timeData.year}</p>
+      <p>Date: {timeData.date}</p>
+      <p>Time: {timeData.time}</p>
+    </div>
+  );
 }
