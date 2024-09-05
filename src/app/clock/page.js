@@ -1,5 +1,5 @@
 'use client';
-
+import "./page.css";
 import { useEffect, useState } from 'react';
 
 export default function ClockPage() {
@@ -15,18 +15,21 @@ export default function ClockPage() {
         console.error('Error fetching data:', error);
       }
     }
-
     fetchData();
+    const intervalId = setInterval(fetchData, 1000);
+    return () => clearInterval(intervalId);
   }, []);
 
   if (!timeData) return <p>Loading...</p>;
 
   return (
     <div>
-      <h1>Current Time Information</h1>
-      <p>Year: {timeData.year}</p>
-      <p>Date: {timeData.date}</p>
-      <p>Time: {timeData.time}</p>
+      <h1 className='Header'>Current Time Information</h1>
+      <div className="Box">
+        <p>Year: {timeData.year}</p>
+        <p>Date: {timeData.date}</p>
+        <p>Time: {timeData.time}</p>
+      </div>
     </div>
   );
 }
