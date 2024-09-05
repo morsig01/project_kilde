@@ -4,17 +4,27 @@
     color: black;
     height: 50px;
     text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
-.Box{
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.clock{
     width: 500px;
     height: 500px;
     background-color: rgb(255, 255, 255);
-    text-align: center;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 15%;
+    border-radius: 50%;
+}
+.clock-text{
     color: black;
-    border-radius: 5%;
-    padding-top: 9%;
+    text-align: left;
+    padding-left: 5%;
+    padding-top: 35%;
     font-size: 2.25rem;
 }
