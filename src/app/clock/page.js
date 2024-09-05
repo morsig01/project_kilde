@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import '../page.css';
 
 export default function ClockPage() {
   const [time, setTime] = useState('--:--:--');
@@ -14,7 +15,6 @@ export default function ClockPage() {
     }
   };
 
-  // Fetch time when the component mounts
   useEffect(() => {
     fetchTime();
   }, []);
@@ -31,34 +31,4 @@ export default function ClockPage() {
     </div>
   );
 }
-
-const styles = {
-  container: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '100vh',
-    fontFamily: 'Arial, sans-serif',
-    backgroundColor: '#f0f0f0',
-  },
-  clockContainer: {
-    textAlign: 'center',
-    backgroundColor: '#fff',
-    padding: '20px',
-    borderRadius: '10px',
-    boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
-  },
-  time: {
-    fontSize: '3em',
-    margin: '20px 0',
-  },
-  refreshButton: {
-    padding: '10px 20px',
-    fontSize: '1.2em',
-    cursor: 'pointer',
-    backgroundColor: '#007bff',
-    color: '#fff',
-    border: 'none',
-    borderRadius: '5px',
-  },
-};
+  
