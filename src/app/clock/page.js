@@ -24,11 +24,11 @@ export default function ClockPage() {
 
   return (
     <div>
-      <h1 className='Header'>Current Time Information</h1>
+      <h1 className='Header'>Tid og dato rn</h1>
       <div className="Box">
-        <p>Year: {timeData.year}</p>
-        <p>Date: {timeData.date}</p>
-        <p>Time: {timeData.time}</p>
+        <p>År: {timeData.year}</p>
+        <p>Dato: {timeData.date}</p>
+        <p>Klokken: {timeData.time}</p>
       </div>
     </div>
   );
