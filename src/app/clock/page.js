@@ -28,7 +28,7 @@ export default function ClockPage() {
         const now = new Date();
         const seconds = now.getSeconds();
 
-        const correctedSeconds = (seconds + 14) % 60;
+        const correctedSeconds = (seconds + 15) % 60;
 
         const rotation = (correctedSeconds * 6) % 360;
 
