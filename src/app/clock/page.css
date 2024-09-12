@@ -2,16 +2,15 @@
     width: auto;
     background: rgb(255, 255, 255);
     color: black;
-    height: 50px;
+    height: 15vh;
     text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 70px;
 }
 .box {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 85vh;
 }
 .clock{
     width: 500px;
@@ -20,6 +19,8 @@
     margin-left: auto;
     margin-right: auto;
     border-radius: 50%;
+    outline: 20px solid rgb(28, 28, 28);
+    position: relative;
 }
 .clock-text{
     color: black;
@@ -27,4 +28,8 @@
     padding-left: 5%;
     padding-top: 35%;
     font-size: 2.25rem;
+    position: relative;
+}
+.circle-animation{
+    margin-top: -61.5%;
 }
